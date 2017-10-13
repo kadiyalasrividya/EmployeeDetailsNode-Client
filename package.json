@@ -1,0 +1,14 @@
+{
+  "name": "TestingProject",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "ejs": "*",
+    "express": "3.2.6",
+    "nodemailer": "^4.1.0",
+    "pg": "^6.1.0"
+  }
+}

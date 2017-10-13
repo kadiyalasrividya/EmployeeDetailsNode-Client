@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title Here</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+	  <form action="/getEmployee">
+	    <h1>Select the Grade</h1>
+
+	   <select id="gradelist" name="grade"></select>
+	   <br />
+	   <input type="submit" value="Submit"/>
+		   <script>
+			    var gradesdata = <%-JSON.stringify(gradesdata)%>;
+			    var grades=gradesdata.data;
+			    console.log(grades);
+			    var gradelist = document.getElementById("gradelist");
+			   
+			    <!-- Add All Grades Option -->
+			    var option = document.createElement("option");
+			    option.text='All Grades';
+			    option.value='All Grades';
+			    gradelist.add(option);
+			   
+			    <!-- Add Grades Option -->
+			    for(var i=1; i<=grades.length; i++){
+				    var option = document.createElement("option");
+				    option.text=grades[i-1].grade;
+				    option.value=grades[i-1].grade;
+				    gradelist.add(option);
+			    }
+		   </script>
+	   </form>
+  </body>
+</html>
